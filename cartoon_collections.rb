@@ -1,16 +1,25 @@
-def roll_call_dwarves# code an argument here
-  # Your code here
+def roll_call_dwarves(dwarves)
+  new_array = [ ]
+  dwarves.each_with_index do |dwarf, index|
+    new_array.push(puts "#{index + 1} . #{dwarf}")
+  end
+  return new_array
 end
 
-def summon_captain_planet# code an argument here
-  # Your code here
+def summon_captain_planet(planeteer_calls)
+  new_array = [ ]
+  planeteer_calls.collect do |element|
+    new_array.push("#{element.capitalize}!")
+  end
+  return new_array
+end
+ #The method didn't pass when I did new_array.push(puts "#{element.capitalize}!"), I had to take out the 'puts'
+
+def long_planeteer_calls(words)
+  words.any? {|word| word.length > 4}
 end
 
-def long_planeteer_calls# code an argument here
-  # Your code here
-end
-
-def find_the_cheese# code an argument here
-  # the array below is here to help
+def find_the_cheese(snacks)
   cheese_types = ["cheddar", "gouda", "camembert"]
+  snacks.detect {|snack| cheese_types.include?(snack)}
 end
